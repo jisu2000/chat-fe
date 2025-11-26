@@ -1,0 +1,46 @@
+.spacer {
+    flex: 1 1 auto;
+  }
+  
+  /* Toolbar */
+  mat-toolbar {
+    background: #2C4673 !important;
+    color: white !important;
+  }
+  
+  /* MENU BUTTON (mat-icon-button) */
+  .menu-button {
+    width: 56px;
+    height: 56px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white !important; /* text / foreground */
+  }
+  
+  /* FIX MATERIAL OVERRIDE — MOST IMPORTANT */
+  .menu-button .mat-icon {
+    color: white !important;
+    font-size: 28px;
+  }
+  
+  /* LOGIN BUTTON */
+  .login-btn {
+    background-color: #3498DB !important;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    height: 2.5rem;
+    font-weight: bold;
+    font-size: medium;
+  }
+  
+  .login-btn:hover {
+    background-color: #2980B9 !important;
+  }
+  
+  .login-btn mat-icon {
+    margin-right: 8px;
+    font-size: 1.5rem;
+  }
+  

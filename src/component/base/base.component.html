@@ -1,0 +1,32 @@
+<!-- Toolbar on top -->
+<app-navbar 
+[open]="sidenavOpened"
+(toggleSidenav)="toggleSidenav()"></app-navbar>
+
+<!-- Sidenav container below the toolbar -->
+<mat-sidenav-container class="container">
+    <mat-sidenav #sidenav [(opened)]="sidenavOpened" mode="over" (backdropClick)="sidenavOpened = false"
+        class="sidenav">
+        <mat-nav-list>
+            <mat-list-item>
+                <mat-icon>dashboard</mat-icon>
+                <span>Dashboard</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>person</mat-icon>
+                <span>Users</span>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-icon>settings</mat-icon>
+                <span>Settings</span>
+            </mat-list-item>
+        </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+        <div class="content">
+            <h2>Welcome to ExpressCHAT!</h2>
+            <p>All content appears below the navbar.</p>
+        </div>
+    </mat-sidenav-content>
+</mat-sidenav-container>

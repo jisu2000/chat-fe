@@ -1,0 +1,15 @@
+<mat-toolbar>
+    <button mat-icon-button class="menu-button" (click)="toggleMenu()">
+      <mat-icon *ngIf="!open">menu</mat-icon>
+      <mat-icon *ngIf="open">close</mat-icon>
+    </button>
+  
+    <span>ExpressCHAT</span>
+    <span class="spacer"></span>
+  
+    <button mat-fab extended class="login-btn">
+      <mat-icon>login</mat-icon>
+      Login
+    </button>
+  </mat-toolbar>
+  
