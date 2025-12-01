@@ -6,18 +6,20 @@ import { MatListModule } from '@angular/material/list';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
 
+import { RouterOutlet, RouterLink } from '@angular/router';
+import { SidenavComponent } from "../sidenav/sidenav.component";
+
 @Component({
   selector: 'base-component',
   standalone: true,
-  imports: [NavbarComponent
-    ,
+  imports: [NavbarComponent,
     MatSidenavModule,
-    NavbarComponent,
     CommonModule,
     MatListModule,
     MatIconModule,
-    MatButtonModule
-  ],
+    MatButtonModule,
+    RouterOutlet,
+    RouterLink, SidenavComponent],
   templateUrl: './base.component.html',
   styleUrl: './base.component.css'
 })

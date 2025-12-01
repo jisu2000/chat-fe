@@ -1,0 +1,38 @@
+<div class="chat-container">
+    <div class="chat-header">
+        <h3>Broadcast Channel</h3>
+    </div>
+    <mat-progress-bar mode="indeterminate" *ngIf="isLoading" class="custom-progress-bar"></mat-progress-bar>
+
+    <div class="message-list" #scrollContainer>
+        <div *ngFor="let msg of messageList" class="message"
+            [ngClass]="{'my-message': msg.you_sent, 'other-message': !msg.you_sent}">
+            <div class="message-sender" style="font-weight: bold" style="color: blueviolet;">
+                {{ msg.you_sent ? 'You' : msg.full_name }}
+            </div>
+            <div class="message-content">
+                {{ msg.content }}
+            </div>
+            <div class="message-time">
+                {{ msg.timestamp | date:'short' }}
+            </div>
+        </div>
+    </div>
+
+    <div class="chat-input">
+        <div class="emoji-picker-container" *ngIf="showEmojiPicker" #emojiPickerContainer>
+            <emoji-mart (emojiClick)="addEmoji($event)" [set]="'apple'" [emojiSize]="32"></emoji-mart>
+        </div>
+        <mat-form-field appearance="outline" class="full-width">
+            <mat-label>Type a message</mat-label>
+            <textarea matInput [(ngModel)]="newMessage" rows="1" style="resize: none; overflow: hidden;"
+                oninput="this.style.height = ''; this.style.height = this.scrollHeight + 'px'"></textarea>
+            <button mat-icon-button matSuffix (click)="toggleEmojiPicker($event)" #emojiToggleBtn>
+                <mat-icon>sentiment_satisfied_alt</mat-icon>
+            </button>
+            <button mat-icon-button matSuffix (click)="sendMessage()" [disabled]="!newMessage.trim()">
+                <mat-icon>send</mat-icon>
+            </button>
+        </mat-form-field>
+    </div>
+</div>

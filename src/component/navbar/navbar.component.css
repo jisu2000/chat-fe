@@ -43,4 +43,31 @@
     margin-right: 8px;
     font-size: 1.5rem;
   }
+
+  .logout-btn {
+    background-color: #E74C3C !important;
+    color: white !important;
+    padding: 10px 20px;
+    border-radius: 8px;
+    height: 2.5rem;
+    font-weight: bold;
+    font-size: medium;
+  }
+  
+  .logout-btn:hover {
+    background-color: #C0392B !important;
+  }
+  
+  .logout-btn mat-icon {
+    margin-right: 8px;
+    font-size: 1.5rem;
+  }
+  
+  .app-title {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: white !important;
+    margin-left: 1rem;
+  }
+
   

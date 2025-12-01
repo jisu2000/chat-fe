@@ -1,15 +1,20 @@
 <mat-toolbar>
-    <button mat-icon-button class="menu-button" (click)="toggleMenu()">
-      <mat-icon *ngIf="!open">menu</mat-icon>
-      <mat-icon *ngIf="open">close</mat-icon>
-    </button>
-  
-    <span>ExpressCHAT</span>
-    <span class="spacer"></span>
-  
-    <button mat-fab extended class="login-btn">
-      <mat-icon>login</mat-icon>
-      Login
-    </button>
-  </mat-toolbar>
-  
+  <button [style.visibility]="(authService.user$ | async) ? 'visible' : 'hidden'" mat-icon-button class="menu-button"
+    (click)="toggleMenu()">
+    <mat-icon *ngIf="!open">menu</mat-icon>
+    <mat-icon *ngIf="open">close</mat-icon>
+  </button>
+
+  <span class="app-title">ExpressCHAT</span>
+  <span class="spacer"></span>
+
+  <button mat-fab extended class="login-btn" (click)="openLoginModal()" *ngIf="!(authService.user$ | async)">
+    <mat-icon>login</mat-icon>
+    Login
+  </button>
+
+  <button mat-fab extended class="logout-btn" (click)="logout()" *ngIf="authService.user$ | async">
+    <mat-icon>logout</mat-icon>
+    Logout
+  </button>
+</mat-toolbar>

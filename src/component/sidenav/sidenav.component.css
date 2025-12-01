@@ -1,0 +1,31 @@
+/* Make container fill remaining viewport height */
+.container {
+    height: calc(100vh - 64px);
+    /* subtract toolbar height (default 64px) */
+}
+
+.sidenav {
+    width: 230px;
+    background-color: #b8bacf;
+    color: white;
+    margin-top: 2px;
+    border-radius: 0px;
+}
+
+.content {
+    padding: 0;
+    height: 100%;
+}
+
+.nav-content {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    /* Space between icon and text */
+}
+
+/* Ensure icon doesn't shrink */
+.nav-content mat-icon {
+    margin-right: 0;
+    /* Reset margin as gap handles it */
+}

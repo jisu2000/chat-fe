@@ -1,10 +1,40 @@
+@import '@ctrl/ngx-emoji-mart/picker';
 
-
-html, body {
+html,
+body {
   height: 100%;
 }
 
 body {
   margin: 0;
   font-family: Roboto, "Helvetica Neue", sans-serif;
+}
+
+/* Custom Dialog Container */
+.custom-login-dialog-container .mat-mdc-dialog-container {
+  border-radius: 0px;
+  padding: 0;
+  overflow: hidden !important;
+  display: flex;
+}
+
+.custom-login-dialog-container .mat-mdc-dialog-surface {
+  border-radius: 0px;
+  background-color: #fbfbfb;
+  overflow: hidden !important;
+}
+
+/* Custom Snackbar Panel */
+/* Custom Snackbar Panel */
+.custom-snackbar-panel .mat-mdc-snack-bar-container .mat-mdc-snackbar-surface {
+  padding: 0 !important;
+  background-color: transparent !important;
+  box-shadow: none !important;
+  --mdc-snackbar-container-color: transparent;
+  --mat-mdc-snack-bar-button-color: transparent;
+}
+
+.custom-snackbar-panel .mat-mdc-snack-bar-container {
+  --mdc-snackbar-container-color: transparent;
+  background: transparent !important;
 }
